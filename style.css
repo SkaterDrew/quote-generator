@@ -1,0 +1,201 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #d2e5d8;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cg fill='%231b76c5' fill-opacity='0.33'%3E%3Cpath d='M0 0h80v80H0V0zm20 20v40h40V20H20zm20 35a15 15 0 1 1 0-30 15 15 0 0 1 0 30z' opacity='.5'%3E%3C/path%3E%3Cpath d='M15 15h50l-5 5H20v40l-5 5V15zm0 50h50V15L80 0v80H0l15-15zm32.07-32.07l3.54-3.54A15 15 0 0 1 29.4 50.6l3.53-3.53a10 10 0 1 0 14.14-14.14zM32.93 47.07a10 10 0 1 1 14.14-14.14L32.93 47.07z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+    font-family: "Lobster", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: auto;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling the Search Bar and Filters */
+.filter-header {
+    max-width: 200px;
+    margin: auto;
+    font-size: 2rem;
+}
+
+.search-wrapper {
+    margin: 50px;
+    font-family: "Arial", sans-serif;
+}
+
+.search-input {
+    position: relative;
+    max-width: 300px;
+    margin: auto; 
+}
+
+.search-bar {
+    width: calc(100% - 32px);
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    padding: 8px;
+}
+
+input[type="text"] {
+    padding-left: 36px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border: 2px solid  rgb(146, 146, 146) !important;
+}
+
+#filter {
+    display: none;
+    padding-right: 36px;
+}
+
+#suggestions {
+    display: none;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    border: 1px solid #ccc;
+    z-index: 1;
+}
+
+#suggestions a {
+    display: none;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    color: #333;
+}
+
+#suggestions a:last-child {
+    border-bottom: none;
+}
+
+input::placeholder {
+    color: rgb(146, 146, 146);
+}
+
+.error-message {
+    display: none;
+    color: red;
+    margin-top: 5px;
+}
+
+.right-button {
+    display: none;
+    position: absolute;
+    top: 19px;
+    right: 0px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#dropdown {
+    display: block;
+}
+
+.search-icon{
+    position: absolute;
+    top: 8px;
+    left: 10px;
+}
+
+/* Styling the Quote Container */
+
+.quote-container {
+    max-width: 900px;
+}
+
+.quote-text {
+    font-size: 2.75rem;
+}
+
+.long-quote {
+    font-size: 2rem;
+}
+
+.fa-quote-left {
+    font-size: 4rem;
+}
+
+.quote-author {
+    margin-top: 15px;
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.button-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    cursor: pointer;
+    font-size: 1.2rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background: #333;
+    outline: none;
+    padding: 0.5rem 1.8rem;
+    box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
+}
+
+button:hover {
+    filter: brightness(110%);
+}
+
+button:active {
+    transform: translate(0, 0.3rem);
+    box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
+}
+
+.fa-x-twitter {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Media Query: Tablet or Smaller */
+
+@media screen and (max-width: 1000px) {
+    .quote-container {
+        margin: auto 10px;
+    }
+
+    .quote-text {
+        font-size: 2.5rem;
+    }
+}
